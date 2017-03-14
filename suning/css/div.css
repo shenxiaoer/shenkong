@@ -1,0 +1,7 @@
+@import url(base.css);
+body,div,span,a,b,strong,u,em,i,h1,h2,h3,h4,h5,h6,ul,ol,dl,dt,dd,li{
+	margin: 0 auto;padding: 0px;
+}
+a,div,span,li{
+	text-decoration: none;font-family: 微软雅黑;
+}

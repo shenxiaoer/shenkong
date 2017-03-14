@@ -1,0 +1,81 @@
+//旋转
+@-webkit-keyframes rotate {
+    0%{
+      transform: rotate(0);
+    }
+    100%{
+      transform:rotate(360deg);
+    }
+}
+//圆周
+@r:30;
+@num:100;
+.aa (@i:0) when(@i<=@num){
+    @select:@i/@num*100%;
+    @a:360/@num*@i*pi()/180;
+    @{select}{
+        transform:translate(cos(@a)*@r*1px,sin(@a)*@r*1px);
+    }
+    .aa(@i+1);
+}
+@-webkit-keyframes radius {
+  .aa();
+}
+//曲线
+@r1:70;
+@r2:5;
+@speed1:2;
+@speed2:12;
+@num:100;
+.bb (@i:0) when(@i<@num){
+    @select:@i/@num*100%;
+    @a1:@i*@speed1*pi()/180;
+    @a2:@i*@speed2*pi()/180;
+    @{select}{
+    transform:translate((-@r1/2+cos(@a1)*@r1)*-1px,sin(@a2)*@r2*1px);
+    }
+    .bb(@i+1);
+}
+@-webkit-keyframes zhexian {
+    .bb();
+}
+
+//等待
+@waitwidth:20px;
+@waitheight:20px;
+@waitradius:35px;
+@waitnum:8;
+.wait{
+    width:@waitwidth;height:@waitheight;border-radius:50%;margin:100px auto;
+    .for(@i:0) when(@i<@waitnum){
+        @jiaodu:360/@waitnum*@i*pi()/180;
+        .box-shadow(cos(@jiaodu)*@waitradius,sin(@jiaodu)*@waitradius,rgba(0,0,0,0.5));
+        .for(@i+1);
+    }
+    .for();
+    -webkit-animation:wait 2s linear infinite;
+}
+.box-shadow(@x,@y,@c){
+    box-shadow+:@x @y 1px @c;
+}
+@-webkit-keyframes wait {
+    .while(@i:0) when(@i<=@waitnum){
+        @select:100/@waitnum*1%*@i;
+        @{select}{
+            .for(@j:0) when(@j<@waitnum){
+                @jiaodu:360/@waitnum*@j*pi()/180;
+                .if(@c:@i) when(@c=@j){
+                    .box-shadow(cos(@jiaodu)*@waitradius,sin(@jiaodu)*@waitradius,rgba(0,0,0,1))
+                }
+                .if(@c:@i) when not(@c=@j){
+                    .box-shadow(cos(@jiaodu)*@waitradius,sin(@jiaodu)*@waitradius,rgba(0,0,0,0.5));
+                }
+                .if();
+                .for(@j+1);
+            }
+            .for();
+        }
+        .while(@i+1);
+    }
+    .while();
+}

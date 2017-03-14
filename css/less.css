@@ -1,0 +1,48 @@
+.one {
+  -moz-border-radius: 30px 10px 2px 5px;
+  -webkit-border-radius: 30px 10px 2px 5px;
+  -o-border-radius: 30px 10px 2px 5px;
+  -ms-border-radius: 30px 10px 2px 5px;
+  border-radius: 30px 10px 2px 5px;
+  border-color: red;
+}
+.two {
+  -moz-border-radius: 50px 10px 10px 10px;
+  -webkit-border-radius: 50px 10px 10px 10px;
+  -o-border-radius: 50px 10px 10px 10px;
+  -ms-border-radius: 50px 10px 10px 10px;
+  border-radius: 50px 10px 10px 10px;
+  border-color: red;
+  -moz-box-shadow: 0 0 10px #000000;
+  -webkit-box-shadow: 0 0 10px #000000;
+  -o-box-shadow: 0 0 10px #000000;
+  -ms-box-shadow: 0 0 10px #000000;
+  box-shadow: 0 0 10px #000000;
+}
+.div1 {
+  width: 100px;
+}
+.div2 {
+  width: 100px;
+}
+.div3 {
+  width: 100px;
+}
+.div4 {
+  width: 100px;
+}
+.div5 {
+  width: 100px;
+}
+.div6 {
+  width: 100px;
+}
+.div7 {
+  width: 100px;
+}
+.div8 {
+  width: 100px;
+}
+.div9 {
+  width: 100px;
+}

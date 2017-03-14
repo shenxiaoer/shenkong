@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="huatu.css">
+    <script src="jquery.js"></script>
+    <script src="draw.js"></script>
+    <script src="huatu.js"></script>
+</head>
+<body style="background: url(bg.png)no-repeat center center" >
+    <div class="box">
+        <nav>
+            <div class="mainmenu navbtn">
+                <div class="options">文件</div>
+                <ul class="son">
+                    <li>新建</li>
+                    <li>返回</li>
+                    <li>保存</li>
+                </ul>
+            </div>
+            <div class="main navbtn">
+                <div class="options">主页</div>
+                <div class="con">
+                    <div class="menu">
+                        <ul class="son">
+                            <li data-role="line"><span class="line"></span></li>
+                            <li data-role="circle"><span class="circle"></span></li>
+                            <li data-role="rect"><span class="rect"></span></li>
+                        </ul>
+                        <div class="options">画图</div>
+                    </div>
+                    <div class="menu">
+                        <ul class="son">
+                            <li  data-role="pen">铅笔</li>
+                            <li  data-role="stroke">画线</li>
+                            <li data-role="fill">填充</li>
+                        </ul>
+                        <div class="options">画图方式</div>
+                    </div>
+                    <div class="menu">
+                        <ul class="son">
+                            <li data-role="1"><span class="xi"></span></li>
+                            <li data-role="3"><span class="zhong"></span></li>
+                            <li data-role="7"><span class="cu"></span></li>
+                        </ul>
+                        <div class="options">线条宽度</div>
+                    </div>
+                    <div class="menu">
+                        <ul class="son">
+                            <input type="color">
+                        </ul>
+                        <div class="options">线条颜色</div>
+                    </div>
+                    <div class="menu">
+                        <ul class="son">
+                            <input type="color">
+                        </ul>
+                        <div class="options">填充颜色</div>
+                    </div>
+                    <div class="menu">
+                        <ul class="son">
+                            <li data-role="6"><span class="small"></span></li>
+                            <li data-role="12"><span class="middle"></span></li>
+                            <li data-role="18"><span class="big"></span></li>
+                        </ul>
+                        <div class="options">擦除</div>
+                    </div>
+                    <div class="menu">
+                        <ul class="son">
+                            <li><div class="sel"></div></li>
+                        </ul>
+                        <div class="options">选择</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="canvas">
+            <canvas></canvas>
+        </div>
+        <div class="copy"></div>
+    </div>
+</body>
+</html>
+
+

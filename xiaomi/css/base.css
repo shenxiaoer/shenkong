@@ -1,0 +1,6 @@
+body,p,input,textarea,ul,li,ol,dl,dt,dd,form,h1,h2,h3,h4,h5,h6{margin:0;padding:0;list-style:none;font-family:"微软雅黑"；}
+/*body有默认的外边距8px；input,textarea有默认的内边距和边框*/
+b,em,strong,i{font-weight:normal;font-style:normal;}
+img{border:0;}/*图片在IE中有默认的边框*/
+a{text-decoration:none;cursor:pointer;}
+select{border:none;background:#f7f7f7;color:#808080;}

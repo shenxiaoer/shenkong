@@ -1,0 +1,61 @@
+@num:6;
+@fontfamily:iconfont;
+@font-face {font-family: "iconfont";
+  src: url('../font/iconfont.eot'); /* IE9*/
+  src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../font/iconfont.woff') format('woff'), /* chrome, firefox */
+  url('../font/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+};
+//属性值
+@name1:caidan;
+@name2:weibo;
+@name3:youxiang;
+@name4:qq;
+@name5:weixin;
+@name6:chilun;
+//
+@font1:e600;
+@font2:e601;
+@font3:e602;
+@font4:e603;
+@font5:e604;
+@font6:e607;
+.iconfont (@i:1) when(@i<=@num){
+    @nname:"name@{i}";
+    @newname:@@nname;
+
+    @nfont:"font@{i}";
+    @newfont:@@nfont;
+    *[data-type=@{newname}]{
+      font-family:@fontfamily;
+    }
+    *[data-type=@{newname}]:before{
+      content:"\@{newfont}";
+    }
+    //左边
+    *[data-type=@{newname}][icon-pos=left]:before{
+      content:"\@{newfont}";
+    }
+  //上边
+    *[data-type=@{newname}][icon-pos=top]:before{
+      content:"\@{newfont}";display:block;
+    }
+  //右边
+    *[data-type=@{newname}][icon-pos=right]:before{
+      content:"";
+    }
+    *[data-type=@{newname}][icon-pos=right]:after{
+      content:"\@{newfont}";
+    }
+  //下边
+    *[data-type=@{newname}][icon-pos=bottom]:before{
+      content:"";
+    }
+    *[data-type=@{newname}][icon-pos=bottom]:after{
+      content:"\@{newfont}";display:block;
+    }
+
+  .iconfont(@i+1);
+}
+.iconfont();

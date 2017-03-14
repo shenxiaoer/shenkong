@@ -1,0 +1,126 @@
+@import "var.less";
+.container{
+  //&代表 .container
+  //固定布局：给container和row设置。
+  & {width:(@width1)-100px;height:auto;.clear();}
+  &>.row{width:(@width1)-100px;;height:100%;}
+  //流式布局：给container和row设置
+  &-fluid {width:100%;height:auto;.clear();}
+  &-fluid>.row{width:100%;height:100%;}
+}
+//调用res，并传入参数
+.res(s);
+.container>.row>.col-s-hid{
+    display:none;
+  }
+.container-fluid>.row>.col-s-hid{
+  display:none;
+}
+@media screen and (min-width:@width1){
+  //表示给container设置宽。
+  .container{
+    width:@width1;
+  }
+  .res(m);
+  .container>.row>.col-s-hid{
+    display:block;
+  }
+  .container-fluid>.row>.col-s-hid{
+    display:block;
+  }
+  .container>.row>.col-m-hid{
+    display:none;
+  }
+  .container-fluid>.row>.col-m-hid{
+    display:none;
+  }
+}
+@media screen and (min-width:@width2){
+  .container{
+    width:@width2;
+  }
+  .res(l);
+  .container>.row>.col-s-hid{
+    display:block;
+  }
+  .container-fluid>.row>.col-s-hid{
+    display:block;
+  }
+  .container>.row>.col-m-hid{
+    display:block;
+  }
+  .container-fluid>.row>.col-m-hid{
+    display:block;
+  }
+  .container>.row>.col-l-hid{
+    display:none;
+  }
+  .container-fluid>.row>.col-l-hid{
+    display:none;
+  }
+}
+
+
+.res(@type,@i:1) when(@i<=@cols){
+  //响应式
+  .container>.row>.col-@{type}-@{i}{
+    float:left;
+    width:@i/@cols*100%;
+  }
+  .container-fluid>.row>.col-@{type}-@{i}{
+    float:left;
+    width:@i/@cols*100%;
+  }
+
+  //让单个块进行位置的调整，通过margin-left
+  .container>.row>.col-@{type}-offsetl-@{i}{
+    margin-left:@i/@cols*100%
+  }
+  .container>.row>.col-@{type}-offsetr-@{i}{
+    margin-left:-(@i/@cols*100%)
+  }
+  .container-fluid>.row>.col-@{type}-offsetl-@{i}{
+    margin-left:@i/@cols*100%
+  }
+  .container-fluid>.row>.col-@{type}-offsetr-@{i}{
+    margin-left:-(@i/@cols*100%)
+  }
+
+  //让块与块进行位置的变换，通过position
+  .container>.row>.col-@{type}-push-@{i}{
+    position:relative;
+    right:@i/@cols*100%;
+  }
+  .container>.row>.col-@{type}-pull-@{i}{
+    position: relative;
+    left:@i/@cols*100%
+  }
+  .container-fluid>.row>.col-@{type}-push-@{i}{
+    position:relative;
+    right:@i/@cols*100%;
+  }
+  .container-fluid>.row>.col-@{type}-pull-@{i}{
+    position: relative;
+    left:@i/@cols*100%
+  }
+
+  //让块在某个大小下隐藏
+  //.container>.row>.col-@{type}-hid{
+  //  display:none;
+  //}
+  //.container-fluid>.row>.col-@{type}-hid{
+  //  display:none;
+  //}
+  .res(@type,@i+1)
+}
+
+//清除浮动
+.clear(){
+  & :after{
+    content:"";
+    display:block;
+  }
+  & :after{
+    clear:both;
+  }
+}

@@ -1,0 +1,36 @@
+@import "var.less";
+.one{
+  .raduis(30px,10px,2px,5px);
+  border-color:@color;
+}
+.two{
+  .raduis(50px);
+  border-color:@color;
+  .shadow(aa);
+}
+.raduis(@r1:10px,@r2:10px,@r3:10px,@r4:10px){
+  -moz-border-radius:@arguments;
+  -webkit-border-radius:@arguments;
+  -o-border-radius:@arguments;
+  -ms-border-radius:@arguments;
+  border-radius:@arguments;
+}
+.shadow(aa,@x:0,@y:0,@b:10px,@r:#000000){
+  -moz-box-shadow:@x @y @b @r;
+  -webkit-box-shadow:@x @y @b @r;
+  -o-box-shadow:@x @y @b @r;
+  -ms-box-shadow:@x @y @b @r;
+  box-shadow:@x @y @b @r;
+}
+.shadow(bb,@x:0,@y:0,@b:10px,@r:#000){
+  -moz-box-shadow:@x @y @b @r inset;
+  -webkit-box-shadow:@x @y @b @r inset;
+  -o-box-shadow:@x @y @b @r inset;
+  -ms-box-shadow:@x @y @b @r inset;
+  box-shadow:@x @y @b @r inset;
+}
+.aa(@i:1) when(@i<10){
+  .div@{i}{width:100px}
+  .aa(@i+1)
+}
+.aa();

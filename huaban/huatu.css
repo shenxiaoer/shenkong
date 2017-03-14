@@ -1,0 +1,95 @@
+html,body{
+    width:100%;height:100%;margin:0;padding:0;overflow:hidden;
+}
+ul,li{
+    padding:0;margin:0;list-style: none;
+}
+.box{
+    position:fixed;width:800px;height:80%;left:0;top:0;right:0;bottom:0;margin: auto auto;border:3px solid #043351;
+}
+nav{
+    width:100%;height:30px;text-align:center;background:#fff;
+}
+.navbtn{
+    width:12.5%;height:100%;position:relative;float:left;cursor:pointer;z-index:999;box-sizing:border-box;
+}
+.navbtn>.options{
+    width:100%;height:100%;line-height:30px;color:#555;z-index:999;position:relative;
+}
+.mainmenu{
+    background:rgb(25,121,202);
+}
+.mainmenu>.options{
+    color:#fff;
+}
+.mainmenu .son{
+    width:100%;border-width:0 1px 1px 1px;border-color:#ccc;border-style:solid;background: #fff;position:absolute;top:30px;left:-1px;display:none;
+}
+.mainmenu .son>li{
+    width:100%;padding:5px 0;
+}
+.mainmenu .son>li:hover{
+    background:#eee;
+}
+.main{
+    border:1px solid #ccc;border-bottom:0;
+}
+.con{position:absolute;left:-101px;top:29px;width:800px;border:1px solid #ccc;background:#efefef;box-sizing:border-box}
+.con>.menu{
+     float:left;width:14.2857%;position:relative;height:80px;border-right:1px solid #ccc;box-sizing: border-box;
+ }
+
+.con>.menu>.options{
+    width:100%;font-size:8px;color:#ccc;float:left;line-height:20px;position:absolute;bottom:0;left:0
+}
+.con>.menu>.son{
+     width:100%;font-size:12px;color:#555;display:block;float:left;text-align:center;
+ }
+.menu:nth-of-type(4)>.son{
+    margin-top:20px;
+}
+.menu:nth-of-type(5)>.son{
+    margin-top:20px;
+}
+.con>.menu>.son>li{
+    width:100%;height:20px;line-height:20px;
+}
+.canvas{
+    width:100%;position:absolute;top:112px;left:0
+}
+.copy{
+    width:100%;position:absolute;top:112px;left:0
+}
+canvas{
+    background:rgb(201,210,226);
+}
+.line{
+    display: inline-block;width:40px;height:1px;background:#000;
+}
+.circle{
+    display: inline-block;width:14px;height:14px;border:1px solid #000;border-radius: 50%;
+}
+.rect{
+    display:inline-block;width:30px;height:15px;border:1px solid #000;
+}
+.xi{
+    display: inline-block;width:40px;height:1px;background:#000;
+}
+.zhong{
+    display: inline-block;width:40px;height:3px;background:#000;
+}
+.cu{
+    display: inline-block;width:40px;height:5px;background:#000;
+}
+.small{
+    display:inline-block;width:6px;height:6px;background:#fff;border:1px solid #000;
+}
+.middle{
+    display:inline-block;width:12px;height:12px;background:#fff;border:1px solid #000;
+}
+.big{
+    display:inline-block;width:16px;height:16px;background:#fff;border:1px solid #000;
+}
+.sel{
+    width:30px;height:20px;border:1px dashed #000;box-shadow:0px 0px 5px #aaa;margin:auto auto;margin-top:20px;box-sizing: border-box;
+}

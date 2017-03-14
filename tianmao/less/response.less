@@ -1,0 +1,112 @@
+@import "var.less";
+.container{
+  &{
+    width:(@width1)-220px;
+    height:auto;
+    .clear();
+    margin:0 auto;
+    &>.row{
+      width:100%;
+      height:auto;
+      overflow:hidden;
+    }
+  }
+  &-fluid{
+    width:100%;
+    height:auto;
+    .clear();
+    &>.row{
+      width:100%;
+      height:auto;
+      overflow:hidden;
+    }
+  }
+}
+.col-s-hid{
+  display:none;
+}
+.res(s);
+
+@media screen and (min-width:@width1){
+  .container{
+    width:(@width1)-20px;
+  }
+  .col-s-hid{
+     display:block;
+   }
+  .col-m-hid{
+    display:none;
+  }
+  .res(m);
+}
+@media screen and (min-width:@width2){
+  .container{
+    width:(@width2)-20px;
+  }
+  .col-s-hid{
+    display:block;
+  }
+  .col-m-hid{
+    display:block;
+  }
+  .col-l-hid{
+    display:none;
+  }
+  .res(l);
+}
+//清除浮动子元素的影响
+.clear(){
+  &:before,&:after{
+    content:"";
+    display:block;
+  }
+  &:after{
+    clear:both;
+  }
+}
+//计算
+.res(@type,@i:1) when (@i<=@cols){
+  .container>.row>.col-@{type}-@{i}{
+    width:@i/@cols*100%;
+    float:left;
+  }
+  .container-fluid>.row>.col-@{type}-@{i}{
+    width:@i/@cols*100%;
+    float:left;
+  }
+  //固定单个移动
+  .container>.row>.col-@{type}-offsetl-@{i}{
+    margin-left:@i/@cols*100%;
+  }
+  .container>.row>.col-@{type}-offsetr-@{i}{
+    margin-left:-(@i/@cols*100%);
+  }
+  //流体单个移动
+  .container-fluid>.row>.col-@{type}-offsetl-@{i}{
+    margin-left:@i/@cols*100%;
+  }
+  .container-fluid>.row>.col-@{type}-offsetr-@{i}{
+    margin-left:-(@i/@cols*100%);
+  }
+  //固定调换位置
+  .container>.row>.col-@{type}-push-@{i}{
+    position:relative;left:@i/@cols*100%;
+  }
+  .container>.row>.col-@{type}-pull-@{i}{
+    position:relative;right:@i/@cols*100%;
+  }
+  //流体调换位置
+  .container-fluid>.row>.col-@{type}-push-@{i}{
+    position:relative;left:@i/@cols*100%;
+  }
+  .container-fluid>.row>.col-@{type}-pull-@{i}{
+    position:relative;right:@i/@cols*100%;
+  }
+  .res(@type,@i+1);
+}
+.pushleft{
+  float:left!important;
+}
+.pushright{
+  float:right!important;
+}
